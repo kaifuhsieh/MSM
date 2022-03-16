@@ -222,4 +222,18 @@ $(function () {
             },
         ],
     });
+    $(window).on('load resize scroll', function (e) {
+        var window_H = $(window).innerHeight();
+        var windowTop = $(window).scrollTop();
+        $('.mapContent').each(function (index, el) {
+            // 可以+130 讓圖進入多點再跑動畫
+            var imgTop = Math.floor($(this).offset().top - windowTop + 130);
+            //imgTop < window_H 是指進入到最底部
+            //imgTop>0 是指還沒滾到最上方
+            //同時條件成立 代表物件在看得到的地方才會trigger動畫
+            if (imgTop < window_H && imgTop > 0) {
+                $(this).addClass('effect');
+            }
+        });
+    });
 });

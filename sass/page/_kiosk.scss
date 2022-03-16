@@ -85,6 +85,10 @@ h2 {
             }
             img {
                 height: 100%;
+                &:first-child {
+                    padding-right: 0.5em;
+                    border-right: 1px solid #aaa;
+                }
             }
         }
         nav {
@@ -604,6 +608,44 @@ h2 {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    //設定第1層灰色動畫
+                    &:before {
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        background-color: #fff;
+                        z-index: 9;
+                    }
+                    //設定第2層綠色動畫
+                    &:after {
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        background-color: $primaryColor;
+                        z-index: 8;
+                    }
+                    &.effect {
+                        &:before {
+                            width: 0;
+                            -webkit-transition: visibility 0s 0.5s, width 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                            transition: visibility 0s 0.5s, width 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                            visibility: hidden;
+                        }
+                        &:after {
+                            width: 0;
+                            -webkit-transition: background-color 0s 0.8s, visibility 0s 1.2s,
+                                width 0.5s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+                            transition: background-color 0s 0.8s, visibility 0s 1.2s,
+                                width 0.5s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+                            visibility: hidden;
+                        }
+                    }
                     .img-container {
                         @include aspect-ratio(160, 72);
                         min-width: 1200px;
