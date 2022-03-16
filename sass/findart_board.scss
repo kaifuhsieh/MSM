@@ -1,0 +1,7 @@
+@charset "utf-8";
+@import '_variable'; //變數
+// 共通 common
+@import 'sass/common/_mixin'; //客製MIXIN
+
+// 說明牌規格
+@import 'page/_board';

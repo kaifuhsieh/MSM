@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    font-family: $font-family;
+}
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 3em 4em;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    @media (orientation: landscape) {
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 4em 4em 4em 1.5em;
+    }
+    .introduction {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 100%;
+        @media (orientation: landscape) {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 58%;
+            max-width: 58%;
+            margin: 0 0 0 auto;
+        }
+    }
+    .thumbnail {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        height: 280px;
+        position: relative;
+        margin: 0 auto 3em;
+        width: 100%;
+        max-width: 1200px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 100%;
+        @media (orientation: landscape) {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 40%;
+            width: 40%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: flex;
+            align-self: stretch;
+            height: 95%;
+            align-items: flex-start;
+        }
+        .img-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                object-fit: contain;
+                @media (orientation: landscape) {
+                    position: relative;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .painting {
+        margin: 0 0 1em;
+        min-height: 5em;
+        h2 {
+            font-size: $h2-font-size;
+            margin: 0 0 0.5rem;
+            line-height: 1.25em;
+        }
+        h3 {
+            font-size: $h3-font-size;
+            margin: 0 0 0.5rem;
+            line-height: 1.25em;
+        }
+        .caption {
+            font-size: $caption-font-size;
+            margin: 0;
+            font-weight: bold;
+            line-height: 1.45em;
+            justify-content: space-between;
+            span {
+                display: inline-block;
+                margin: 0 auto 1em;
+                & ~ span {
+                    margin-left: 1em;
+                }
+            }
+        }
+    }
+    .artist {
+        margin: 0 0 3em;
+        min-height: 5em;
+        h2 {
+            font-size: $h2-font-size;
+            margin: 0 0 0.5rem;
+            line-height: 1.25em;
+        }
+        h3 {
+            font-size: $h3-font-size;
+            margin: 0 0 0.5rem;
+            line-height: 1.25em;
+        }
+        .caption {
+            font-size: $caption-font-size;
+            margin: 0;
+            font-weight: bold;
+            line-height: 1.45em;
+            span {
+                display: inline-block;
+                margin: 0 0 0.5em 0em;
+                & ~ span {
+                    margin-left: 1em;
+                }
+            }
+        }
+    }
+    .description {
+        margin: 4em auto 1em;
+        position: relative;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 1.5em;
+            height: 1.5em;
+            background: #222;
+            top: -2.5em;
+            left: 0;
+        }
+        p {
+            font-size: $p-font-size;
+            line-height: 1.75em;
+            color: #333;
+        }
+    }
+    .copyright {
+        position: absolute;
+        width: calc(100% - 8em);
+        bottom: 2em;
+        left: 4em;
+        height: 3em;
+        display: flex;
+        justify-content: flex-end;
+        img {
+            // max-width: 100%;
+            object-fit: contain;
+            height: 3em;
+            margin: 0 0 0 auto;
+        }
+    }
+    // imgOnly
+    &.imgOnly {
+        padding: 4em;
+        .thumbnail {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+            height: 90%;
+            position: relative;
+            margin: 0 auto 3em;
+            width: 100%;
+            max-width: 1200px;
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 100%;
+            @media (orientation: landscape) {
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: 90%;
+                width: 90%;
+                margin: 0 auto;
+            }
+            .img-container {
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    object-fit: centain;
+                }
+            }
+        }
+    }
+    // wordOnly
+    &.wordOnly {
+        padding: 4em;
+        flex-flow: row wrap;
+        .thumbnail {
+            display: none;
+        }
+        .introduction {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 100%;
+            @media (orientation: landscape) {
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .artist {
+                margin: 0 0 7em;
+            }
+        }
+    }
+}

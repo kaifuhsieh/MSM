@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import '_variable'; //變數
+// 共通 common
+@import 'sass/common/_normalize';
+@import 'sass/common/_mixin'; //客製MIXIN
+@import 'sass/common/_hack';
+@import 'sass/common/_typography';
+// element
+@import 'sass/element/_btn';
+@import 'sass/element/_image';
+@import 'sass/modual/_form';
+
+// kiosk
+@import 'page/_kiosk';
