@@ -157,6 +157,30 @@ $(function () {
     $('#booking_505').mouseout(function () {
         $('.dotContent').find('#room_505').removeClass('active');
     });
+    $('#booking_507').mouseover(function () {
+        $('.dotContent').find('#room_507').addClass('active');
+    });
+    $('#booking_507').mouseout(function () {
+        $('.dotContent').find('#room_507').removeClass('active');
+    });
+    $('#booking_509').mouseover(function () {
+        $('.dotContent').find('#room_509').addClass('active');
+    });
+    $('#booking_509').mouseout(function () {
+        $('.dotContent').find('#room_509').removeClass('active');
+    });
+    $('#booking_510').mouseover(function () {
+        $('.dotContent').find('#room_510').addClass('active');
+    });
+    $('#booking_510').mouseout(function () {
+        $('.dotContent').find('#room_510').removeClass('active');
+    });
+    $('#booking_511').mouseover(function () {
+        $('.dotContent').find('#room_511').addClass('active');
+    });
+    $('#booking_511').mouseout(function () {
+        $('.dotContent').find('#room_511').removeClass('active');
+    });
     // pop booking
     $('.mapContent')
         .find('a.booking')

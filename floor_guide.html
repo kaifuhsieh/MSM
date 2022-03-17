@@ -190,6 +190,54 @@
                                         <i class="fas fa-map-marker-alt"></i>
                                     </a>
                                 </li>
+                                <li>
+                                    <div class="img-container">
+                                        <img src="images/room1.jpg" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="roomName">Room 507</div>
+                                        <div class="people"><i class="far fa-user"></i><span>6 people</span></div>
+                                    </div>
+                                    <a href="#" id="booking_507" class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="img-container">
+                                        <img src="images/room2.jpg" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="roomName">Room 509</div>
+                                        <div class="people"><i class="far fa-user"></i><span>6 people</span></div>
+                                    </div>
+                                    <a href="#" id="booking_509" class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="img-container">
+                                        <img src="images/room3.jpg" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="roomName">Room 510</div>
+                                        <div class="people"><i class="far fa-user"></i><span>6 people</span></div>
+                                    </div>
+                                    <a href="#" id="booking_510"  class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="img-container">
+                                        <img src="images/room3.jpg" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="roomName">Room 511</div>
+                                        <div class="people"><i class="far fa-user"></i><span>6 people</span></div>
+                                    </div>
+                                    <a href="#" id="booking_511"  class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -205,13 +253,15 @@
                             <div class="img-container">
                                 <img src="images/map.jpg" alt="" />
                                 <div class="dotContent">
-                                    <a href="#" id="room_503" class="dot booking" style="left: 15.1%; top: 82%"><span>Room 503</span></a>
-                                    <a href="#" id="room_504" class="dot booking" style="left: 28.5%; top: 82%"><span>Room 504</span></a>
-                                    <a href="#" id="room_505" class="dot booking" style="left: 41.8%; top: 82%"><span>Room 505</span></a>
-                                    <a href="#" id="room_506" class="dot reserved" style="left: 55.2%; top: 82%"><span>Room 506</span></a>
-                                    <a href="#" id="room_507" class="dot booking" style="left: 65.9%; top: 82%"><span>Room 507</span></a>
-                                    <a href="#" id="room_508" class="dot reserved" style="left: 73.9%; top: 82%"><span>Room 508</span></a>
-                                    <a href="#" id="room_509" class="dot booking" style="left: 82%; top: 82%"><span>Room 509</span></a>
+                                    <a href="#" id="room_503" class="dot booking" style="left: 15.6%; top: 82%"><span>Room 503</span></a>
+                                    <a href="#" id="room_504" class="dot booking" style="left: 28.8%; top: 82%"><span>Room 504</span></a>
+                                    <a href="#" id="room_505" class="dot booking" style="left: 42.4%; top: 82%"><span>Room 505</span></a>
+                                    <a href="#" id="room_506" class="dot reserved" style="left: 55.7%; top: 82%"><span>Room 506</span></a>
+                                    <a href="#" id="room_507" class="dot booking" style="left: 66.4%; top: 82%"><span>Room 507</span></a>
+                                    <a href="#" id="room_508" class="dot reserved" style="left: 74.5%; top: 82%"><span>Room 508</span></a>
+                                    <a href="#" id="room_509" class="dot booking" style="left: 82.4%; top: 82%"><span>Room 509</span></a>
+                                    <a href="#" id="room_510" class="dot booking" style="left: 6.9%; top: 17%"><span>Room 510</span></a>
+                                    <a href="#" id="room_511" class="dot booking" style="left: 6.9%; top: 40%"><span>Room 511</span></a>
                                 </div>
                             </div>
                         </div>
@@ -365,4 +415,22 @@
     <!-- slick -->
     <script src="vendor/slick/slick.min.js "></script>
     <script src="js/spaceplus.js"></script>
+    <script>
+        $(function(){
+             $(window).on('load resize scroll', function (e) {
+        var window_H = $(window).innerHeight();
+        var windowTop = $(window).scrollTop();
+        $('.mapContent').each(function (index, el) {
+            // 可以+130 讓圖進入多點再跑動畫
+            var imgTop = Math.floor($(this).offset().top - windowTop + 430);
+            //imgTop < window_H 是指進入到最底部
+            //imgTop>0 是指還沒滾到最上方
+            //同時條件成立 代表物件在看得到的地方才會trigger動畫
+            if (imgTop < window_H && imgTop > 0) {
+                $(this).addClass('effect');
+            }
+        });
+    });
+        }
+    </script>
 </html>
